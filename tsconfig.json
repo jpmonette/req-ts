@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "outDir": "build",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "module": "commonjs",
+    "target": "es5",
+    "lib": ["es7", "dom"],
+    "moduleResolution": "node",
+    "rootDir": "src",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": false,
+    "noImplicitThis": true,
+    "noStrictGenericChecks": false,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": false,
+    "noUnusedLocals": false,
+    "typeRoots": [
+      "src/typings",
+      "node_modules/@types"
+    ],
+    "declaration": true
+  },
+  "files": [
+    "src/index.ts",
+    "src/typings/index.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
+}

@@ -1,0 +1,4 @@
+coverage
+src/
+tsconfig.json
+tsconfig.test.json

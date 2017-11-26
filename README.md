@@ -9,7 +9,7 @@
 This is a JavaScript module available through the [npm registry](https://www.npmjs.com/).
 
 ```sh
-$ npm install @jpmonette/req
+$ npm install --save @jpmonette/req
 ```
 
 ```sh
@@ -25,7 +25,7 @@ import REQ from "req"
 Initialise a new **req** client, then use the various functions on the client to access different parts of the registry. For example, if you want to get company information using a unique *NEQ* identifier:
 
 ```ts
-const client := new REQ();
+const client = new REQ();
 let company = await client.getNEQ('1143920115');
 console.log(company.SectionInformationsGenerales.SousSecIdentification.NomEntreprise)
 // Output: BOMBARDIER INC.
