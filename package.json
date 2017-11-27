@@ -1,7 +1,7 @@
 {
   "name": "@jpmonette/req",
   "description": "req is a JavaScript client library for accessing the Registre des entreprises du Québec.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "keywords": [
     "assnat",
     "canada",
@@ -16,8 +16,8 @@
   "repository": "jpmonette/req-ts.git",
   "license": "MIT",
   "homepage": "http://github.com/jpmonette/req-ts",
-  "main": "./build/index.js",
-  "types": "./build/index.d.ts",
+  "main": "./build/main.js",
+  "types": "./build/main.d.ts",
   "scripts": {
     "build": "rm -rf build && tsc",
     "coveralls": "cat ./coverage/lcov.info | coveralls",

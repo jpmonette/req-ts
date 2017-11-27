@@ -16,18 +16,12 @@
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": false,
     "noUnusedLocals": false,
-    "typeRoots": [
-      "src/typings",
-      "node_modules/@types"
-    ],
-    "declaration": true
+    "declaration": true,
+    "baseUrl": "."
   },
-  "files": [
-    "src/index.ts",
-    "src/typings/index.d.ts"
-  ],
   "exclude": [
     "node_modules",
+    "build",
     "**/*.spec.ts"
   ]
 }
