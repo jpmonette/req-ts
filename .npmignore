@@ -1,4 +1,7 @@
 coverage
-src/
+src
 tsconfig.json
 tsconfig.test.json
+.travis.yml
+tslint.json
+yarn.lock

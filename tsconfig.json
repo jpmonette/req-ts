@@ -6,7 +6,10 @@
     "removeComments": true,
     "module": "commonjs",
     "target": "es5",
-    "lib": ["es7", "dom"],
+    "lib": [
+      "es7",
+      "dom"
+    ],
     "moduleResolution": "node",
     "rootDir": "src",
     "forceConsistentCasingInFileNames": true,
@@ -14,20 +17,20 @@
     "noImplicitThis": true,
     "noStrictGenericChecks": false,
     "strictNullChecks": true,
+    "strict": true,
     "suppressImplicitAnyIndexErrors": false,
     "noUnusedLocals": false,
+    "declaration": true,
     "typeRoots": [
-      "src/typings",
-      "node_modules/@types"
-    ],
-    "declaration": true
+      "typings"
+    ]
   },
-  "files": [
-    "src/index.ts",
-    "src/typings/index.d.ts"
+  "include": [
+    "src/**/*"
   ],
   "exclude": [
     "node_modules",
+    "build",
     "**/*.spec.ts"
   ]
 }

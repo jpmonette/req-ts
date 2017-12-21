@@ -1,17 +1,16 @@
 import * as fetch from 'isomorphic-fetch';
-import { REQRequestOptions, REQSearchResponse, SearchOptions } from 'req';
 
 export default class REQ {
 
   sessionKey: string;
   cookie: string | undefined;
 
-  async getNEQ(neq: string): Promise<any> {
+  async getNEQ(neq: string) {
     let request = this.newRequest('POST', '/ObtenirEtatsRensEntreprise', { Id: neq });
     return (await this.do(request));
   }
 
-  async search(options: SearchOptions): Promise<REQSearchResponse> {
+  async search(options: SearchOptions) {
     let request = this.newRequest('POST', '/ObtenirListeEntreprises', {
       Domaine: options.domain || null,
       Etendue: options.etendue || null,
@@ -52,7 +51,7 @@ export default class REQ {
     return request;
   }
 
-  async do(request: Request): Promise<any> {
+  async do(request: Request) {
     let response: Response = await fetch(request);
     let body = await response.json();
 
@@ -63,4 +62,49 @@ export default class REQ {
     return body.d;
   }
 
+}
+
+export interface ListeEntreprises {
+  ID: string;
+  NumeroDossier: string;
+  Nom: string;
+  AdressePrimaire: string;
+  Statut: string;
+  DateChangementEtat: string;
+  StatutDuNom: string;
+  DateInitiale: string;
+  DateFinale: string;
+}
+
+export interface REQSearchResponse {
+  PageCourante: number;
+  NombrePages: number;
+  ListeEntreprises: Array<ListeEntreprises>;
+  TotalEnregistrements: number;
+  CleSession: string;
+  TypeResultat: string;
+  Message: string;
+}
+
+export interface REQRequest {
+  critere: REQRequestOptions;
+}
+
+export interface REQRequestOptions {
+  CleSession?: string;
+  Domaine?: number | null;
+  Etendue?: number | null;
+  Id?: string;
+  PageCourante?: number;
+  Texte?: string;
+  Type?: number | null;
+  UtilisateurAccepteConditionsUtilisation?: boolean;
+}
+
+export interface SearchOptions {
+  domain?: number;
+  type?: number;
+  etendue?: number;
+  page?: number;
+  keywords: string;
 }
