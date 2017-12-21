@@ -5,12 +5,12 @@ export default class REQ {
   sessionKey: string;
   cookie: string | undefined;
 
-  async getNEQ(neq: string): Promise<any> {
+  async getNEQ(neq: string) {
     let request = this.newRequest('POST', '/ObtenirEtatsRensEntreprise', { Id: neq });
     return (await this.do(request));
   }
 
-  async search(options: SearchOptions): Promise<REQSearchResponse> {
+  async search(options: SearchOptions) {
     let request = this.newRequest('POST', '/ObtenirListeEntreprises', {
       Domaine: options.domain || null,
       Etendue: options.etendue || null,
@@ -51,7 +51,7 @@ export default class REQ {
     return request;
   }
 
-  async do(request: Request): Promise<any> {
+  async do(request: Request) {
     let response: Response = await fetch(request);
     let body = await response.json();
 

@@ -2,7 +2,7 @@
 
 > **req** is a JavaScript client library for accessing the [Registre des entreprises du Québec](http://www.registreentreprises.gouv.qc.ca/en/default.aspx).
 
-[![TravisCI Build Status](https://travis-ci.org/jpmonette/req-ts.svg)](https://travis-ci.org/jpmonette/req-ts) [![Coverage Status](https://coveralls.io/repos/jpmonette/req-ts/badge.svg?branch=master&service=github)](https://coveralls.io/github/jpmonette/req-ts?branch=master) [![GoDoc](https://godoc.org/github.com/jpmonette/req-ts?status.svg)](https://godoc.org/github.com/jpmonette/req-ts)
+[![TravisCI Build Status](https://travis-ci.org/jpmonette/req-ts.svg)](https://travis-ci.org/jpmonette/req-ts) [![Coverage Status](https://coveralls.io/repos/github/jpmonette/req-ts/badge.svg?branch=master)](https://coveralls.io/github/jpmonette/req-ts?branch=master) [![GoDoc](https://godoc.org/github.com/jpmonette/req-ts?status.svg)](https://godoc.org/github.com/jpmonette/req-ts)
 
 ## Installation
 

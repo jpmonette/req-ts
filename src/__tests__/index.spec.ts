@@ -4,15 +4,18 @@ let client = new REQ();
 
 describe('REQ Search', () => {
 
+  beforeEach(() => {
+    client = new REQ();
+  })
+
   it('should return 25 search results', async () => {
     let companies = await client.search({ keywords: 'Bombardier' });
     expect(companies.ListeEntreprises.length).toBe(25);
   });
 
   it('should return 25 search results on second page', async () => {
-    let clientWithKey = new REQ();
-    await clientWithKey.search({ keywords: 'Bombardier' });
-    let companies = await clientWithKey.search({ keywords: 'Bombardier', page: 1 });
+    await client.search({ keywords: 'Bombardier' });
+    let companies = await client.search({ keywords: 'Bombardier', page: 1 });
     expect(companies.ListeEntreprises.length).toBe(25);
   });
 

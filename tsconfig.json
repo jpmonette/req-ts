@@ -6,7 +6,10 @@
     "removeComments": true,
     "module": "commonjs",
     "target": "es5",
-    "lib": ["es7", "dom"],
+    "lib": [
+      "es7",
+      "dom"
+    ],
     "moduleResolution": "node",
     "rootDir": "src",
     "forceConsistentCasingInFileNames": true,
@@ -14,11 +17,17 @@
     "noImplicitThis": true,
     "noStrictGenericChecks": false,
     "strictNullChecks": true,
+    "strict": true,
     "suppressImplicitAnyIndexErrors": false,
     "noUnusedLocals": false,
     "declaration": true,
-    "baseUrl": "."
+    "typeRoots": [
+      "typings"
+    ]
   },
+  "include": [
+    "src/**/*"
+  ],
   "exclude": [
     "node_modules",
     "build",
