@@ -27,6 +27,7 @@
   "devDependencies": {
     "@types/isomorphic-fetch": "0.0.34",
     "@types/jest": "^21.1.6",
+    "coveralls": "^3.0.0",
     "jest": "^21.2.1",
     "source-map-loader": "^0.2.3",
     "ts-jest": "^21.2.3",
