@@ -1,16 +1,13 @@
-# req
+<h1 align="center"><code>@jpmonette/req</code></h1>
 
-> **req** is a JavaScript client library for accessing the [Registre des entreprises du Québec](http://www.registreentreprises.gouv.qc.ca/en/default.aspx).
+<p align="center">
+  <a href="https://travis-ci.org/jpmonette/req-ts"><img src="https://travis-ci.org/jpmonette/req-ts.svg?branch=master" alt="Build Status"></a> <a href='https://coveralls.io/github/jpmonette/req-ts?branch=master'><img src='https://coveralls.io/repos/github/jpmonette/req-ts/badge.svg?branch=master' alt='Coverage Status' /></a> <a href="https://badge.fury.io/js/%40jpmonette%2Freq"><img src="https://badge.fury.io/js/%40jpmonette%2Freq.svg" alt="npm version" height="18"></a> <a href="https://github.com/facebook/jest"><img src="https://img.shields.io/badge/tested_with-jest-99424f.svg" alt="Tested with Jest"></a> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
+</p>
+<p align="center"><code>@jpmonette/req</code> - a JavaScript client library for accessing the <a href="http://www.registreentreprises.gouv.qc.ca/en/default.aspx">Registre des entreprises du Québec</a>.</p>
 
-[![TravisCI Build Status](https://travis-ci.org/jpmonette/req-ts.svg)](https://travis-ci.org/jpmonette/req-ts) [![Coverage Status](https://coveralls.io/repos/github/jpmonette/req-ts/badge.svg?branch=master)](https://coveralls.io/github/jpmonette/req-ts?branch=master) [![GoDoc](https://godoc.org/github.com/jpmonette/req-ts?status.svg)](https://godoc.org/github.com/jpmonette/req-ts)
+# Getting Started
 
 ## Installation
-
-This is a JavaScript module available through the [npm registry](https://www.npmjs.com/).
-
-```sh
-$ npm install --save @jpmonette/req
-```
 
 ```sh
 $ yarn add @jpmonette/req
@@ -18,26 +15,24 @@ $ yarn add @jpmonette/req
 
 ## Usage
 
-```js
-import REQ from "req"
-```
-
-Initialise a new **req** client, then use the various functions on the client to access different parts of the registry. For example, if you want to get company information using a unique *NEQ* identifier:
+### Search a NEQ
 
 ```ts
+import REQ from "req";
+
 const client = new REQ();
-let company = await client.getNEQ('1143920115');
-console.log(company.SectionInformationsGenerales.SousSecIdentification.NomEntreprise)
+const company = await client.getNEQ("1143920115");
+console.log(company.SectionInformationsGenerales.SousSecIdentification.NomEntreprise);
 // Output: BOMBARDIER INC.
 ```
 
-To search the registry:
+### Search the registry
 
 ```ts
-const client := new REQ();
-let companies = await client.search({ keywords: 'mrc' });
+const client = new REQ();
+const companies = await client.search({ keywords: "mrc" });
 
-companies.ListeEntreprises.forEach((company) => {
+companies.ListeEntreprises.map((company) => {
   console.log(`(${company.NumeroDossier}) ${company.Nom}`);
 });
 // Output:
@@ -58,7 +53,6 @@ calling pattern is pretty well established, so adding new methods is relatively
 straightforward.
 
 [contributing]: CONTRIBUTING.md
-
 
 ## License
 
