@@ -1,7 +1,7 @@
 {
   "name": "@jpmonette/req",
   "description": "req is a JavaScript client library for accessing the Registre des entreprises du Québec.",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "keywords": [
     "assnat",
     "canada",
