@@ -22,17 +22,20 @@
     "build": "rm -rf build && tsc",
     "prepublish": "npm run build",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "lint": "yarn eslint . --ext .js,.jsx,.ts,.tsx",
     "test": "jest --coverage"
   },
   "devDependencies": {
     "@types/jest": "^21.1.6",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
     "coveralls": "^3.0.0",
+    "eslint": "^7.24.0",
     "isomorphic-fetch": "^2.2.1",
     "jest": "^21.2.1",
     "source-map-loader": "^0.2.3",
     "ts-jest": "^21.2.3",
-    "typescript": "^2.6.2",
-    "typings": "^2.1.1"
+    "typescript": "^4.2.4"
   },
   "jest": {
     "transform": {
