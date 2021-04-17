@@ -15,11 +15,23 @@ $ yarn add @jpmonette/req
 
 ## Usage
 
-### Search a NEQ
+### Import
+
+#### Using Node
 
 ```ts
 import REQ from "req";
+```
 
+#### Using Deno
+
+```ts
+import REQ from "https://deno.land/x/req@v1.0.0/src/index.ts";
+```
+
+### Search a NEQ
+
+```ts
 const client = new REQ();
 const company = await client.getNEQ("1143920115");
 console.log(company.SectionInformationsGenerales.SousSecIdentification.NomEntreprise);
